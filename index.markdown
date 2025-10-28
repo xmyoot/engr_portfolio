@@ -19,7 +19,8 @@ I’m an Electrical Engineer specializing in hardware design, testing, and embed
 {% endif %}
 
 <div class="projects-grid">
-{% for project in site.projects %}
+{% assign projects = site.projects | sort: 'date' | reverse %}
+{% for project in projects %}
   <article class="project-card">
     <a class="project-link" href="{{ project.url | relative_url }}">
       {% if project.thumbnail %}

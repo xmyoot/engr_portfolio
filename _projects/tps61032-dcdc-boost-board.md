@@ -1,6 +1,6 @@
 ---
 title: TPS61032 Boost Evaluation Board
-date: 2025-10-27
+date: 2025-09-04
 tags: [power, hardware, tps61032, boost, evalboard]
 thumbnail: /assets/images/tps61032-thumb.png
 excerpt: "Compact boost converter evaluation board based on the TI TPS61032 family — low-voltage input, adjustable output, and test points for bench evaluation."

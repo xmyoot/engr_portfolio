@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>ESP32‑WROOM Custom Board | Hector Jimenez</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="ESP32‑WROOM Custom Board" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Compact custom development board using an ESP32‑WROOM module with USB power, USB‑to‑serial, reset/boot buttons and plated headers for easy prototyping." />
+<meta property="og:description" content="Compact custom development board using an ESP32‑WROOM module with USB power, USB‑to‑serial, reset/boot buttons and plated headers for easy prototyping." />
+<link rel="canonical" href="http://0.0.0.0:4000/projects/esp32-wroom-custom-board.html" />
+<meta property="og:url" content="http://0.0.0.0:4000/projects/esp32-wroom-custom-board.html" />
+<meta property="og:site_name" content="Hector Jimenez" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-07-29T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="ESP32‑WROOM Custom Board" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-29T00:00:00+00:00","datePublished":"2025-07-29T00:00:00+00:00","description":"Compact custom development board using an ESP32‑WROOM module with USB power, USB‑to‑serial, reset/boot buttons and plated headers for easy prototyping.","headline":"ESP32‑WROOM Custom Board","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/projects/esp32-wroom-custom-board.html"},"url":"http://0.0.0.0:4000/projects/esp32-wroom-custom-board.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="Hector Jimenez" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Hector Jimenez</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/">Home</a><a class="page-link" href="/projects/">Projects</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="project-detail">
+  <header>
+    <h1>ESP32‑WROOM Custom Board</h1>
+    <p class="date">Jul 29, 2025</p>
+  </header>
+
+  
+    <img src="/assets/images/esp32-thumb.png" alt="ESP32‑WROOM Custom Board" class="project-hero"/>
+  
+
+  <div class="project-content">
+    <p>A compact development board built around an ESP32‑WROOM module. The design shown includes a USB power/input selection, an on‑board 3.3V regulator, USB‑to‑serial interface, user and power LEDs, reset and boot buttons, and plated pin headers for easy prototyping and connection to external circuitry.</p>
+
+<p>Key features</p>
+<ul>
+  <li>ESP32‑WROOM module footprint for easy module population (Wi‑Fi / Bluetooth enabled MCU).</li>
+  <li>Power input selection with a 5V → 3.3V regulator to power the ESP32 from USB or an external supply.</li>
+  <li>Integrated USB connector and USB‑to‑serial IC (USB‑UART) for flashing and serial console access.</li>
+  <li>Reset and BOOT/User buttons for entering the bootloader and convenient board control during development.</li>
+  <li>Status LEDs: power indicator and user LED footprints are placed for quick visual feedback.</li>
+  <li>Plated header connectors on both sides exposing module pins for IO, ADC, UART, SPI, I2C and power rails.</li>
+  <li>Signal handling section with level shifting and routing for robust serial/USB control signals.</li>
+</ul>
+
+<p>Electrical / mechanical notes</p>
+<ul>
+  <li>USB‑to‑serial interface: provides DTR/RTS signals for automatic boot/reset when supported by the USB‑UART chip and host tools.</li>
+  <li>Boot/reset circuitry: small RC and transistor-based circuits are included to ensure reliable toggling of EN/BOOT signals during programming.</li>
+  <li>Thermal and layout: keep decoupling capacitors close to the module power pins and maintain solid ground pour for RF performance.</li>
+  <li>Mounting: board includes mounting holes and a compact outline suitable for breadboard-adjacent development or enclosure mounting.</li>
+</ul>
+
+<p>Suggested test and development procedures</p>
+<ul>
+  <li>Connect the board to USB and verify the power LED lights and the 3.3V rail is present before connecting peripherals.</li>
+  <li>Use the USB‑to‑serial interface and esptool / platform-specific utilities to flash firmware and open a serial console.</li>
+  <li>Test Wi‑Fi and Bluetooth radios in a clear RF environment; keep large copper pours or shields away from the module antenna area.</li>
+</ul>
+
+<p>Use cases</p>
+<ul>
+  <li>Rapid firmware development for IoT prototypes and connected sensors</li>
+  <li>Teaching and demo platform for wireless microcontroller features</li>
+  <li>Integration platform for sensor nodes, actuators and peripheral driver development</li>
+</ul>
+
+<p>Repository / more</p>
+<ul>
+  <li>Schematic and board files: replace with your design repo link (e.g., https://github.com/your/repo)</li>
+</ul>
+
+  </div>
+
+  <p><a href="/">&larr; Back</a></p>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Hector Jimenez</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Hector Jimenez</li><li><a class="u-email" href="mailto:hectorjimenezuc@gmail.com">hectorjimenezuc@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/xmyoot"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">xmyoot</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>I’m an Electrical Engineer specializing in hardware design and embedded systems.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

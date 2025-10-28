@@ -1,6 +1,6 @@
 ---
 title: LM5116 Evaluation DC‑DC Board
-date: 2025-10-27
+date: 2025-10-01
 tags: [power, hardware, lm5116, dcdc, evalboard]
 thumbnail: /assets/images/lm5116-thumb.png
 excerpt: "Compact evaluation board based on the LM5116 synchronous buck controller — wide input range, precision current sensing, and test points for power-system development."

@@ -1,7 +1,9 @@
 ---
 title: STM32 Dev Board (BluePill-derived)
-date: 2025-10-27
+date: 2025-08-25
 tags: [embedded, hardware, stm32, devboard]
+thumbnail: /assets/images/stm32-thumb.png
+excerpt: "Compact BluePill-compatible STM32 dev board optimized for sensor-focused, low-power projects — flexible power rails, and standard debug/serial interfaces."
 ---
 A compact, BluePill-derived STM32 development board engineered for sensors and low-power embedded applications. The design prioritizes breadboard-friendly headers, robust power routing for external sensors, and common host interfaces for debugging and communication.
 

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>TPS5431 Step‑Down DC‑DC Board | Hector Jimenez</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="TPS5431 Step‑Down DC‑DC Board" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Compact step-down converter board built around the TI TPS5431 — wide input, adjustable output, and test points for bench characterization." />
+<meta property="og:description" content="Compact step-down converter board built around the TI TPS5431 — wide input, adjustable output, and test points for bench characterization." />
+<link rel="canonical" href="http://0.0.0.0:4000/projects/tps5431-dcdc-board.html" />
+<meta property="og:url" content="http://0.0.0.0:4000/projects/tps5431-dcdc-board.html" />
+<meta property="og:site_name" content="Hector Jimenez" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-08-15T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="TPS5431 Step‑Down DC‑DC Board" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-08-15T00:00:00+00:00","datePublished":"2025-08-15T00:00:00+00:00","description":"Compact step-down converter board built around the TI TPS5431 — wide input, adjustable output, and test points for bench characterization.","headline":"TPS5431 Step‑Down DC‑DC Board","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/projects/tps5431-dcdc-board.html"},"url":"http://0.0.0.0:4000/projects/tps5431-dcdc-board.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="Hector Jimenez" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Hector Jimenez</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/">Home</a><a class="page-link" href="/projects/">Projects</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="project-detail">
+  <header>
+    <h1>TPS5431 Step‑Down DC‑DC Board</h1>
+    <p class="date">Aug 15, 2025</p>
+  </header>
+
+  
+    <img src="/assets/images/tps5431-thumb.png" alt="TPS5431 Step‑Down DC‑DC Board" class="project-hero"/>
+  
+
+  <div class="project-content">
+    <p>A compact step-down (buck) converter evaluation board built around the Texas Instruments TPS5431 controller. The layout and feature set are designed for quick bench testing, prototyping and integration into embedded power chains.</p>
+
+<p>Key features</p>
+<ul>
+  <li>Controller: TI TPS5431 step-down regulator footprint with recommended supporting components and test pads.</li>
+  <li>Wide input: PCB designed to tolerate a broad input range with input filtering and transient protection footprints.</li>
+  <li>Adjustable output: potentiometer footprint for quick VOUT adjustment and pads for remote sense / Kelvin connections.</li>
+  <li>Power stage: footprints for low-RDS(on) MOSFETs, low‑ESR output capacitors, and a compact power inductor (shown on the board image).</li>
+  <li>Testability: labeled test points for VIN, VOUT, SW/LX node, EN, and ground to simplify bench characterization and scope probing.</li>
+  <li>Protection: footprints for input fuse and TVS diode, plus thermal reliefs for improved dissipation.</li>
+</ul>
+
+<p>Electrical / mechanical notes</p>
+<ul>
+  <li>Intended usage: the power stage is intended for standalone bench testing; any telemetry or logic-level interfacing should be level-shifted to match the target MCU.</li>
+  <li>Thermal management: MOSFETs, inductor, and the TPS device benefit from copper pours and thermal vias for sustained high‑power testing.</li>
+  <li>Board outline and mounting: compact form factor with mounting holes for bench fixtures and optional standoffs.</li>
+</ul>
+
+<p>Suggested test and measurement procedures</p>
+<ul>
+  <li>Start with a low input voltage and no load; verify the output adjusts correctly with the potentiometer before applying load.</li>
+  <li>Probe the switching node (SW/LX) with a high-frequency differential probe to observe switching behavior and ringing.</li>
+  <li>Characterize efficiency across input voltages and load currents; monitor temperatures of MOSFETs and inductor.</li>
+</ul>
+
+<p>Use cases</p>
+<ul>
+  <li>Rapid prototyping of step-down power stages for embedded systems</li>
+  <li>Educational bench tool to demonstrate switching regulator behavior</li>
+  <li>Integration testbed for downstream power electronics and control circuits</li>
+</ul>
+
+<p>Repository / more</p>
+<ul>
+  <li>Design files, BOM, and detailed test procedures: https://github.com/your/repo (replace with actual repo)</li>
+</ul>
+
+  </div>
+
+  <p><a href="/">&larr; Back</a></p>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Hector Jimenez</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Hector Jimenez</li><li><a class="u-email" href="mailto:hectorjimenezuc@gmail.com">hectorjimenezuc@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/xmyoot"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">xmyoot</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>I’m an Electrical Engineer specializing in hardware design and embedded systems.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

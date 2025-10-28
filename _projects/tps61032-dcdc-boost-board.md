@@ -10,7 +10,7 @@ A compact evaluation board built around the TI TPS61032 boost controller family.
 # Schematic
 ![TPS61032 Eval Board schematic excerpt](/assets/images/tps61032-sch.png){:alt="ATPR schematic" style="max-width:100%;height:auto;"}
 
-Key features
+# Key features
 - Controller: TPS61032-series boost regulator footprint with configurable compensation and soft-start options for stable operation across loads.
 - Input: optimized for low-voltage sources (single-cell Li-ion / Li‑Po or other 1–5 V inputs) with input filtering and transient protection.
 - Output: adjustable VOUT via a multi-turn potentiometer footprint and pads for fixed resistor divider to set a permanent output voltage.
@@ -21,7 +21,7 @@ Key features
 - Prototyping area: silkscreened component positions for feed-forward capacitors, snubbers, and optional telemetry components (I2C/PMBus pads reserved on silk).
 - Thermal considerations: copper pours and thermal vias under the power MOSFET footprint to support higher load testing.
 
-Electrical / mechanical notes
+# Electrical / mechanical notes
 - Intended input range: low-voltage sources (design example targets single-cell Li-ion up to 5 V). Consult the IC datasheet for exact recommended limits and external component calculations.
 - Typical layout guidance: minimize SW trace loop area, place input and output caps close to IC pins, and provide a solid ground plane with thermal vias at power devices.
 - Board size: compact evaluation form factor with mounting holes for bench fixtures; ensure airflow for sustained high-load testing.
@@ -32,7 +32,7 @@ Suggested test and measurement procedure
 - Characterize efficiency across input voltages and loads using an electronic load; monitor MOSFET/inductor temperatures and thermal rise.
 - Validate enable/shutdown behavior and any soft-start timing by toggling EN/SHUT and measuring VOUT rise.
 
-Use cases
+# Use cases
 - Powering sensors, radios, or display modules from single-cell batteries
 - Bench evaluation tool for boost-regulator design and measurements
 - Rapid prototyping when a compact, adjustable boost rail is required

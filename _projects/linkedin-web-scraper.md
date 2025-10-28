@@ -8,15 +8,15 @@ excerpt: "A JavaScript-based web scraper for extracting LinkedIn data for resear
 
 A web scraping tool focused on extracting public LinkedIn data for research and analysis. Built as a JavaScript utility, it demonstrates automated browsing, parsing and data export techniques.
 
-Key features
+# Key features
 - Automated navigation and data extraction workflows
 - Export results in common formats (CSV/JSON)
 - Configurable selectors and rate control to minimize server load
 
-Tech stack
+# Tech stack
 - JavaScript (Node.js) and headless browser tooling
 
-Repository / more
+# Repository / more
 - https://github.com/xmyoot/linkedin-web-scraper
 
 Important note

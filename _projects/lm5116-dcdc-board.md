@@ -10,7 +10,7 @@ A compact evaluation board built around the TI LM5116 synchronous buck controlle
 # Schematic
 ![Lm5116 Eval Board schematic excerpt](/assets/images/lm5116-sch.png){:alt="ATPR schematic" style="max-width:100%;height:auto;"}
 
-Key features
+# Key features
 - Controller: TI LM5116 synchronous buck controller (wide VIN range, high efficiency).
 - Input range: designed for wide input (e.g., 6 V – 65 V) with input filtering and transient protection.
 - Adjustable output: single-turn potentiometer for quick VOUT adjustment; pads for remote sense / Kelvin connections.
@@ -21,17 +21,17 @@ Key features
 - Connectivity: rugged screw terminals / banana-style posts for VIN and VOUT; additional pads for I2C/PMBus if telemetry is added.
 - Prototyping area: silkscreened component positions for optional RC snubbers, EMI filter components, and measurement headers.
 
-Electrical / mechanical notes
+# Electrical / mechanical notes
 - Intended logic / control: primary power stage is independent of MCU logic; any telemetry or control interface should be level‑shifted appropriately for the target system.
 - Thermal management: power MOSFETs and the inductor require copper pours and thermal vias for sustained high-power operation.
 - Typical board size: compact evaluation form factor with mounting posts for bench fixtures; ensure adequate airflow for continuous high-load testing.
 
-Suggested test and measurement procedures
+# Suggested test and measurement procedures
 - Start with low input voltage and no load; verify VOUT adjusts correctly with potentiometer before applying load.
 - Characterize efficiency across input voltages and loads; probe switching node (HS/ LX) with a high-frequency differential probe.
 - Validate current-limit performance using a programmable electronic load and monitor temperature rise of MOSFETs and inductor.
 
-Use cases
+# Use cases
 - Power-stage validation for embedded controllers and motor drivers
 - Rapid prototyping of power supply integration for sensors and actuators
 - Educational bench tool for switching regulator behavior and measurements

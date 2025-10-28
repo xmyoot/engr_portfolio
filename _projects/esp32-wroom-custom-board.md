@@ -13,7 +13,7 @@ A schematic showing usb power input, usb-to-serial interface, led indicators, re
 
 ![ESP32 Dev Board schematic](/assets/images/esp32-sch.png)
 
-Key features
+# Key features
 - ESP32‑WROOM module footprint for easy module population (Wi‑Fi / Bluetooth enabled MCU).
 - Power input selection with a 5V → 3.3V regulator to power the ESP32 from USB or an external supply.
 - Integrated USB connector and USB‑to‑serial IC (USB‑UART) for flashing and serial console access.
@@ -22,7 +22,7 @@ Key features
 - Plated header connectors on both sides exposing module pins for IO, ADC, UART, SPI, I2C and power rails.
 - Signal handling section with level shifting and routing for robust serial/USB control signals.
 
-Electrical / mechanical notes
+# Electrical / mechanical notes
 - USB‑to‑serial interface: provides DTR/RTS signals for automatic boot/reset when supported by the USB‑UART chip and host tools.
 - Boot/reset circuitry: small RC and transistor-based circuits are included to ensure reliable toggling of EN/BOOT signals during programming.
 - Thermal and layout: keep decoupling capacitors close to the module power pins and maintain solid ground pour for RF performance.
@@ -33,7 +33,7 @@ Suggested test and development procedures
 - Use the USB‑to‑serial interface and esptool / platform-specific utilities to flash firmware and open a serial console.
 - Test Wi‑Fi and Bluetooth radios in a clear RF environment; keep large copper pours or shields away from the module antenna area.
 
-Use cases
+# Use cases
 - Rapid firmware development for IoT prototypes and connected sensors
 - Teaching and demo platform for wireless microcontroller features
 - Integration platform for sensor nodes, actuators and peripheral driver development

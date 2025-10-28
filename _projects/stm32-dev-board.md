@@ -12,7 +12,7 @@ A high-resolution schematic showing power rails, USB power input, UART bridge co
 
 ![STM32 Dev Board schematic](/assets/images/stm32-schematic.png)
 
-Key features
+# Key features
 - MCU: STM32F103 — 32-bit ARM Cortex-M3, up to 72 MHz.
 - USB power input with over-voltage and reverse-polarity protection for safe operation from host USB.
 - Integrated USB-to-UART bridge (CH340/CP2102/FTDI selectable) exposed on a dedicated header for console debugging and bootloader access.
@@ -28,12 +28,12 @@ Key features
 - Breadboard-compatible 0.1" pin headers with BluePill-aligned GPIO mapping for easy porting of existing designs.
 - Prototyping area with footprint for an RTC coin cell holder and optional battery backup circuitry.
 
-Electrical / mechanical notes
+# Electrical / mechanical notes
 - Logic level: 3.3V. External 5V sensors require level translation or the provided 5V rail and level shifters.
 - On-board regulator supplies up to 500 mA to 3.3V rail (ensure thermal management for sustained loads).
 - Typical board dimensions: ~53 x 21 mm (BluePill-compatible); mounting holes provided for M2 screws.
 
-Use cases
+# Use cases
 - Sensor acquisition nodes (I2C / UART sensors)
 - Rapid firmware development and debugging with SWD
 - Prototyping low-power embedded applications that require multiple power rails

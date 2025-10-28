@@ -9,7 +9,7 @@ A compact evaluation board built around the TI TPS5431-series synchronous step-d
 
 # Schematic
 Reference schematic for the power stage, compensation network, sense resistor, and test point placement.
-![TPS5431 DC-DC schematic](/assets/images/tps5431-schematic.png)
+![TPS5431 DC-DC schematic](/assets/images/tps5431-sch.png)
 
 # Key features
 - Controller: TPS5431-family synchronous buck controller for efficient step-down conversion.

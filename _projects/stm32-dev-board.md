@@ -10,7 +10,7 @@ A compact, BluePill-derived STM32 development board engineered for sensors and l
 # Schematic
 A high-resolution schematic showing power rails, USB power input, UART bridge connections, SWD header and I2C routing.
 
-![STM32 Dev Board schematic](/assets/images/stm32-schematic.png)
+![STM32 Dev Board schematic](/assets/images/stm32-sch.png)
 
 # Key features
 - MCU: STM32F103 — 32-bit ARM Cortex-M3, up to 72 MHz.

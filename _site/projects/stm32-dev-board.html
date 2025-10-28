@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>STM32 Dev Board (BluePill-derived) | Hector Jimenez</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="STM32 Dev Board (BluePill-derived)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A compact, BluePill-derived STM32 development board engineered for sensors and low-power embedded applications. The design prioritizes breadboard-friendly headers, robust power routing for external sensors, and common host interfaces for debugging and communication." />
+<meta property="og:description" content="A compact, BluePill-derived STM32 development board engineered for sensors and low-power embedded applications. The design prioritizes breadboard-friendly headers, robust power routing for external sensors, and common host interfaces for debugging and communication." />
+<link rel="canonical" href="http://0.0.0.0:4000/projects/stm32-dev-board.html" />
+<meta property="og:url" content="http://0.0.0.0:4000/projects/stm32-dev-board.html" />
+<meta property="og:site_name" content="Hector Jimenez" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-10-27T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="STM32 Dev Board (BluePill-derived)" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-10-27T00:00:00+00:00","datePublished":"2025-10-27T00:00:00+00:00","description":"A compact, BluePill-derived STM32 development board engineered for sensors and low-power embedded applications. The design prioritizes breadboard-friendly headers, robust power routing for external sensors, and common host interfaces for debugging and communication.","headline":"STM32 Dev Board (BluePill-derived)","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/projects/stm32-dev-board.html"},"url":"http://0.0.0.0:4000/projects/stm32-dev-board.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="Hector Jimenez" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Hector Jimenez</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/">Home</a><a class="page-link" href="/projects/">Projects</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="project-detail">
+  <header>
+    <h1>STM32 Dev Board (BluePill-derived)</h1>
+    <p class="date">Oct 27, 2025</p>
+  </header>
+
+  
+
+  <div class="project-content">
+    <p>A compact, BluePill-derived STM32 development board engineered for sensors and low-power embedded applications. The design prioritizes breadboard-friendly headers, robust power routing for external sensors, and common host interfaces for debugging and communication.</p>
+
+<p>Key features</p>
+<ul>
+  <li>MCU: STM32F103 (BluePill-compatible footprint) — 32-bit ARM Cortex-M3, up to 72 MHz.</li>
+  <li>USB power input with over-voltage and reverse-polarity protection for safe operation from host USB.</li>
+  <li>Integrated USB-to-UART bridge (CH340/CP2102/FTDI selectable) exposed on a dedicated header for console debugging and bootloader access.</li>
+  <li>Dedicated I2C interfaces: SDA/SCL exposed on both the main header and a secondary sensor header; includes 10 kΩ pull-ups to 3.3V with option to populate/remove for bus customization.</li>
+  <li>Power rails for external sensors:
+    <ul>
+      <li>3.3V regulated rail (on-board LDO capable of powering multiple low-power sensors).</li>
+      <li>5V rail directly from USB (fused) for sensors that require higher voltage — with a jumper to isolate from 3.3V when needed.</li>
+      <li>GND plane and multiple GND pins for clean signal routing.</li>
+    </ul>
+  </li>
+  <li>Level-shifting options: footprint for bi-directional level shifters on I2C and UART lines for 5V peripheral support.</li>
+  <li>Boot configuration jumper (BOOT0) and reset button for easy firmware flashing and recovery.</li>
+  <li>SWD header (2x5) for hardware debugging and programming with ST-Link or compatible debuggers.</li>
+  <li>User LED and status indicators for power and UART activity.</li>
+  <li>Breadboard-compatible 0.1” pin headers with BluePill-aligned GPIO mapping for easy porting of existing designs.</li>
+  <li>Prototyping area with footprint for an RTC coin cell holder and optional battery backup circuitry.</li>
+</ul>
+
+<p>Electrical / mechanical notes</p>
+<ul>
+  <li>Logic level: 3.3V. External 5V sensors require level translation or the provided 5V rail and level shifters.</li>
+  <li>On-board regulator supplies up to 500 mA to 3.3V rail (ensure thermal management for sustained loads).</li>
+  <li>Typical board dimensions: ~53 x 21 mm (BluePill-compatible); mounting holes provided for M2 screws.</li>
+</ul>
+
+<p>Use cases</p>
+<ul>
+  <li>Sensor acquisition nodes (I2C / UART sensors)</li>
+  <li>Rapid firmware development and debugging with SWD</li>
+  <li>Prototyping low-power embedded applications that require multiple power rails</li>
+</ul>
+
+<p>Repository / more</p>
+<ul>
+  <li>Design files and firmware examples: https://github.com/your/repo</li>
+</ul>
+
+  </div>
+
+  <p><a href="/">&larr; Back</a></p>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Hector Jimenez</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Hector Jimenez</li><li><a class="u-email" href="mailto:hectorjimenezuc@gmail.com">hectorjimenezuc@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/xmyoot"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">xmyoot</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>I’m an Electrical Engineer specializing in hardware design and embedded systems.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

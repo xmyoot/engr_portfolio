@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>TPS61032 Boost Evaluation Board | Hector Jimenez</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="TPS61032 Boost Evaluation Board" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Compact boost converter evaluation board based on the TI TPS61032 family — low-voltage input, adjustable output, and test points for bench evaluation." />
+<meta property="og:description" content="Compact boost converter evaluation board based on the TI TPS61032 family — low-voltage input, adjustable output, and test points for bench evaluation." />
+<link rel="canonical" href="http://0.0.0.0:4000/projects/tps61032-dcdc-boost-board.html" />
+<meta property="og:url" content="http://0.0.0.0:4000/projects/tps61032-dcdc-boost-board.html" />
+<meta property="og:site_name" content="Hector Jimenez" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-10-27T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="TPS61032 Boost Evaluation Board" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-10-27T00:00:00+00:00","datePublished":"2025-10-27T00:00:00+00:00","description":"Compact boost converter evaluation board based on the TI TPS61032 family — low-voltage input, adjustable output, and test points for bench evaluation.","headline":"TPS61032 Boost Evaluation Board","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/projects/tps61032-dcdc-boost-board.html"},"url":"http://0.0.0.0:4000/projects/tps61032-dcdc-boost-board.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="Hector Jimenez" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Hector Jimenez</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/">Home</a><a class="page-link" href="/projects/">Projects</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="project-detail">
+  <header>
+    <h1>TPS61032 Boost Evaluation Board</h1>
+    <p class="date">Oct 27, 2025</p>
+  </header>
+
+  
+    <img src="/assets/images/tps61032-thumb.png" alt="TPS61032 Boost Evaluation Board" class="project-hero"/>
+  
+
+  <div class="project-content">
+    <p>A compact evaluation board built around the TI TPS61032 boost controller family. The board is intended for bench validation, prototyping, and integration into low-voltage systems that require a regulated higher-voltage rail from single-cell batteries or other low-voltage sources.</p>
+
+<p>Key features</p>
+<ul>
+  <li>Controller: TPS61032-series boost regulator footprint with configurable compensation and soft-start options for stable operation across loads.</li>
+  <li>Input: optimized for low-voltage sources (single-cell Li-ion / Li‑Po or other 1–5 V inputs) with input filtering and transient protection.</li>
+  <li>Output: adjustable VOUT via a multi-turn potentiometer footprint and pads for fixed resistor divider to set a permanent output voltage.</li>
+  <li>Power stage: compact high-current inductor footprint, low‑ESR output capacitors, and dedicated switching node test point for scope probing.</li>
+  <li>Testability: labeled test points for VIN, SW/LX, VOUT, EN/SHUT, and ground to simplify characterization and measurement.</li>
+  <li>Protection: optional input reverse-protection diode footprint, transient suppression area (TVS), and fuse footprint for bench safety.</li>
+  <li>Connectivity: solder pads and header footprints for VIN, VOUT, and EN; banana/screw terminal footprints available for robust bench connections.</li>
+  <li>Prototyping area: silkscreened component positions for feed-forward capacitors, snubbers, and optional telemetry components (I2C/PMBus pads reserved on silk).</li>
+  <li>Thermal considerations: copper pours and thermal vias under the power MOSFET footprint to support higher load testing.</li>
+</ul>
+
+<p>Electrical / mechanical notes</p>
+<ul>
+  <li>Intended input range: low-voltage sources (design example targets single-cell Li-ion up to 5 V). Consult the IC datasheet for exact recommended limits and external component calculations.</li>
+  <li>Typical layout guidance: minimize SW trace loop area, place input and output caps close to IC pins, and provide a solid ground plane with thermal vias at power devices.</li>
+  <li>Board size: compact evaluation form factor with mounting holes for bench fixtures; ensure airflow for sustained high-load testing.</li>
+</ul>
+
+<p>Suggested test and measurement procedure</p>
+<ul>
+  <li>Begin with low VIN and no load; verify VOUT response to the adjustment potentiometer before applying a load.</li>
+  <li>Probe switching node (SW/LX) with a high-frequency differential probe to inspect switching waveform and ringing; adjust snubber or damping if excessive.</li>
+  <li>Characterize efficiency across input voltages and loads using an electronic load; monitor MOSFET/inductor temperatures and thermal rise.</li>
+  <li>Validate enable/shutdown behavior and any soft-start timing by toggling EN/SHUT and measuring VOUT rise.</li>
+</ul>
+
+<p>Use cases</p>
+<ul>
+  <li>Powering sensors, radios, or display modules from single-cell batteries</li>
+  <li>Bench evaluation tool for boost-regulator design and measurements</li>
+  <li>Rapid prototyping when a compact, adjustable boost rail is required</li>
+</ul>
+
+<p>Repository / more</p>
+<ul>
+  <li>Design files, BOM, and measurement examples: https://github.com/your/repo</li>
+</ul>
+
+  </div>
+
+  <p><a href="/">&larr; Back</a></p>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Hector Jimenez</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Hector Jimenez</li><li><a class="u-email" href="mailto:hectorjimenezuc@gmail.com">hectorjimenezuc@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/xmyoot"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">xmyoot</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>I’m an Electrical Engineer specializing in hardware design and embedded systems.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+---
+---
+@import "minima";
+
+/* Custom project card / grid overrides */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.1rem;
+  margin: 1.25rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-card {
+  background: var(--card-bg, #fff);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(20,20,20,0.06);
+  box-shadow: 0 6px 18px rgba(18,24,36,0.04);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+
+.project-link {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  height: 100%;
+}
+
+.thumb-wrap {
+  width: 100%;
+  height: 140px;
+  background: linear-gradient(180deg, #f7f8fa, #fff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.project-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .35s ease;
+}
+
+.project-body {
+  padding: 0.8rem 0.9rem;
+}
+.project-title {
+  margin: 0 0 0.35rem 0;
+  font-size: 1.05rem;
+}
+.project-excerpt {
+  margin: 0;
+  color: #444;
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(18,24,36,0.08);
+}
+.project-card:hover .project-thumb,
+.project-card:focus-within .project-thumb {
+  transform: scale(1.03);
+}
+
+@media (max-width: 520px) {
+  .thumb-wrap { height: 110px; }
+  .project-title { font-size: 1rem; }
+  .project-excerpt { font-size: 0.92rem; }
+}

@@ -7,6 +7,9 @@ excerpt: "Compact boost converter evaluation board based on the TI TPS61032 fami
 ---
 A compact evaluation board built around the TI TPS61032 boost controller family. The board is intended for bench validation, prototyping, and integration into low-voltage systems that require a regulated higher-voltage rail from single-cell batteries or other low-voltage sources.
 
+# Schematic
+![TPS61032 Eval Board schematic excerpt](/assets/images/tps61032-sch.png){:alt="ATPR schematic" style="max-width:100%;height:auto;"}
+
 Key features
 - Controller: TPS61032-series boost regulator footprint with configurable compensation and soft-start options for stable operation across loads.
 - Input: optimized for low-voltage sources (single-cell Li-ion / Li‑Po or other 1–5 V inputs) with input filtering and transient protection.
@@ -33,6 +36,3 @@ Use cases
 - Powering sensors, radios, or display modules from single-cell batteries
 - Bench evaluation tool for boost-regulator design and measurements
 - Rapid prototyping when a compact, adjustable boost rail is required
-
-Repository / more
-- Design files, BOM, and measurement examples: https://github.com/your/repo 

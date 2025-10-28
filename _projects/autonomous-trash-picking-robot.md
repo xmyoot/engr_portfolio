@@ -1,6 +1,6 @@
 ---
 title: Senior Design Project - Autonomous Trash Picking Robot (ATPR)
-date: 2024-12-01
+date: 2025-04-02
 tags: [robotics, autonomous, lidar, computer-vision, prototype]
 thumbnail: /assets/images/atpr-thumb.png
 excerpt: "Autonomous mobile robot that navigates with LiDAR, detects bottles and oranges with computer vision, and collects/sorts waste into onboard bins."
@@ -34,5 +34,16 @@ Conclusion
 
 The ATPR met its project requirements: it navigates autonomously on onboard power, avoids obstacles, detects bottles and oranges at acceptable accuracy levels, and collects and sorts found items. Safety measures including power cutoffs and teleoperation were implemented. The modular design supports future expansions and deployment scenarios.
 
-Repository / more
-- Design files, code and test logs: https://github.com/your/repo (replace with actual link)
+## Diagrams & Schematics
+
+Below are reference images for the system block diagram and selected schematic excerpts.
+
+![ATPR block diagram](/assets/images/atpr-block-diagram1.png){:alt="ATPR block diagram" style="max-width:100%;height:auto;"}
+
+![ATPR software architecture diagram](/assets/images/atpr-block-diagram2.png){:alt="ATPR software diagram" style="max-width:100%;height:auto;"}
+
+![ATPR schematic excerpt](/assets/images/atpr-schematic.png){:alt="ATPR schematic" style="max-width:100%;height:auto;"}
+
+## Senior design report
+
+Read the full senior design write-up: [Full ATPR senior design report](/assets/ATPR-report.docx){:target="_blank" rel="noopener"}

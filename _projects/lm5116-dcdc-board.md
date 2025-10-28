@@ -7,6 +7,9 @@ excerpt: "Compact evaluation board based on the LM5116 synchronous buck controll
 ---
 A compact evaluation board built around the TI LM5116 synchronous buck controller. The design targets power-system development and validation for embedded and industrial applications where a robust, configurable DC‑DC stage is required.
 
+# Schematic
+![Lm5116 Eval Board schematic excerpt](/assets/images/lm5116-sch.png){:alt="ATPR schematic" style="max-width:100%;height:auto;"}
+
 Key features
 - Controller: TI LM5116 synchronous buck controller (wide VIN range, high efficiency).
 - Input range: designed for wide input (e.g., 6 V – 65 V) with input filtering and transient protection.
@@ -33,5 +36,3 @@ Use cases
 - Rapid prototyping of power supply integration for sensors and actuators
 - Educational bench tool for switching regulator behavior and measurements
 
-Repository / more
-- Design files, BOM, and test procedures: https://github.com/your/repo (replace with actual repo)

@@ -1,5 +1,5 @@
 ---
-title: STM32 Dev Board (BluePill-derived)
+title: STM32 Dev Board
 date: 2025-08-25
 tags: [embedded, hardware, stm32, devboard]
 thumbnail: /assets/images/stm32-thumb.png
@@ -7,8 +7,13 @@ excerpt: "Compact BluePill-compatible STM32 dev board optimized for sensor-focus
 ---
 A compact, BluePill-derived STM32 development board engineered for sensors and low-power embedded applications. The design prioritizes breadboard-friendly headers, robust power routing for external sensors, and common host interfaces for debugging and communication.
 
+# Schematic
+A high-resolution schematic showing power rails, USB power input, UART bridge connections, SWD header and I2C routing.
+
+![STM32 Dev Board schematic](/assets/images/stm32-schematic.png)
+
 Key features
-- MCU: STM32F103 (BluePill-compatible footprint) — 32-bit ARM Cortex-M3, up to 72 MHz.
+- MCU: STM32F103 — 32-bit ARM Cortex-M3, up to 72 MHz.
 - USB power input with over-voltage and reverse-polarity protection for safe operation from host USB.
 - Integrated USB-to-UART bridge (CH340/CP2102/FTDI selectable) exposed on a dedicated header for console debugging and bootloader access.
 - Dedicated I2C interfaces: SDA/SCL exposed on both the main header and a secondary sensor header; includes 10 kΩ pull-ups to 3.3V with option to populate/remove for bus customization.
@@ -32,6 +37,3 @@ Use cases
 - Sensor acquisition nodes (I2C / UART sensors)
 - Rapid firmware development and debugging with SWD
 - Prototyping low-power embedded applications that require multiple power rails
-
-Repository / more
-- Design files and firmware examples: https://github.com/your/repo

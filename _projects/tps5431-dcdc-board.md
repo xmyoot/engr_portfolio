@@ -1,20 +1,26 @@
 ---
-title: TPS5431 Step‑Down DC‑DC Board
-date: 2025-08-15
-tags: [power, hardware, tps5431, dcdc, step-down]
+title: TPS5431 DC‑DC Evaluation Board
+date: 2025-08-10
+tags: [power, hardware, tps5431, dcdc, evalboard]
 thumbnail: /assets/images/tps5431-thumb.png
-excerpt: "Compact step-down converter board built around the TI TPS5431 — wide input, adjustable output, and test points for bench characterization."
+excerpt: "Compact synchronous buck evaluation board based on the TI TPS5431 family — designed for reliable step-down power delivery and bench validation."
 ---
+A compact evaluation board built around the TI TPS5431-series synchronous step-down controller. The board is intended for bench validation and integration into embedded systems requiring a robust, configurable buck stage.
 
-A compact step-down (buck) converter evaluation board built around the Texas Instruments TPS5431 controller. The layout and feature set are designed for quick bench testing, prototyping and integration into embedded power chains.
+# Schematic
+Reference schematic for the power stage, compensation network, sense resistor, and test point placement.
+![TPS5431 DC-DC schematic](/assets/images/tps5431-schematic.png)
 
 Key features
-- Controller: TI TPS5431 step-down regulator footprint with recommended supporting components and test pads.
-- Wide input: PCB designed to tolerate a broad input range with input filtering and transient protection footprints.
-- Adjustable output: potentiometer footprint for quick VOUT adjustment and pads for remote sense / Kelvin connections.
-- Power stage: footprints for low-RDS(on) MOSFETs, low‑ESR output capacitors, and a compact power inductor (shown on the board image).
-- Testability: labeled test points for VIN, VOUT, SW/LX node, EN, and ground to simplify bench characterization and scope probing.
-- Protection: footprints for input fuse and TVS diode, plus thermal reliefs for improved dissipation.
+- Controller: TPS5431-family synchronous buck controller for efficient step-down conversion.
+- Input range: wide VIN support with input filtering and transient protection.
+- Adjustable output: potentiometer footprint and pads for fixed resistor divider to set output.
+- Power stage: MOSFET footprints, low‑ESR output capacitors, and dedicated switch-node test point for scope probing.
+- Current sensing: optional sense resistor footprint and differential test points for load characterization.
+- Testability: labeled TP points for VIN, VOUT, SW, EN, and ground.
+- Protection: footprints for input fuse and TVS protection.
+- Connectivity: headers and pads for VIN/VOUT, enable control, and optional telemetry.
+
 
 Electrical / mechanical notes
 - Intended usage: the power stage is intended for standalone bench testing; any telemetry or logic-level interfacing should be level-shifted to match the target MCU.
@@ -30,6 +36,3 @@ Use cases
 - Rapid prototyping of step-down power stages for embedded systems
 - Educational bench tool to demonstrate switching regulator behavior
 - Integration testbed for downstream power electronics and control circuits
-
-Repository / more
-- Design files, BOM, and detailed test procedures: https://github.com/your/repo (replace with actual repo)

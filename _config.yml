@@ -18,10 +18,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Hector Jimenez
+title: "Hector Jimenez"
+author: ""
 email: hectorjimenezuc@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
- I’m an Electrical Engineer specializing in hardware design and embedded systems.
+ Controls Testing Engineer at ABB Inc. Interested in hardware design, open source hardware and embedded systems. UCR 2024
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb

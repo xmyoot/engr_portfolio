@@ -3,21 +3,21 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>TPS5431 Step‑Down DC‑DC Board | Hector Jimenez</title>
+<title>TPS5431 DC‑DC Evaluation Board | Hector Jimenez</title>
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="TPS5431 Step‑Down DC‑DC Board" />
+<meta property="og:title" content="TPS5431 DC‑DC Evaluation Board" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Compact step-down converter board built around the TI TPS5431 — wide input, adjustable output, and test points for bench characterization." />
-<meta property="og:description" content="Compact step-down converter board built around the TI TPS5431 — wide input, adjustable output, and test points for bench characterization." />
+<meta name="description" content="Compact synchronous buck evaluation board based on the TI TPS5431 family — designed for reliable step-down power delivery and bench validation." />
+<meta property="og:description" content="Compact synchronous buck evaluation board based on the TI TPS5431 family — designed for reliable step-down power delivery and bench validation." />
 <link rel="canonical" href="http://0.0.0.0:4000/projects/tps5431-dcdc-board.html" />
 <meta property="og:url" content="http://0.0.0.0:4000/projects/tps5431-dcdc-board.html" />
 <meta property="og:site_name" content="Hector Jimenez" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-08-15T00:00:00+00:00" />
+<meta property="article:published_time" content="2025-08-10T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="TPS5431 Step‑Down DC‑DC Board" />
+<meta property="twitter:title" content="TPS5431 DC‑DC Evaluation Board" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-08-15T00:00:00+00:00","datePublished":"2025-08-15T00:00:00+00:00","description":"Compact step-down converter board built around the TI TPS5431 — wide input, adjustable output, and test points for bench characterization.","headline":"TPS5431 Step‑Down DC‑DC Board","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/projects/tps5431-dcdc-board.html"},"url":"http://0.0.0.0:4000/projects/tps5431-dcdc-board.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-08-10T00:00:00+00:00","datePublished":"2025-08-10T00:00:00+00:00","description":"Compact synchronous buck evaluation board based on the TI TPS5431 family — designed for reliable step-down power delivery and bench validation.","headline":"TPS5431 DC‑DC Evaluation Board","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/projects/tps5431-dcdc-board.html"},"url":"http://0.0.0.0:4000/projects/tps5431-dcdc-board.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="Hector Jimenez" /></head>
 <body><header class="site-header" role="banner">
@@ -39,25 +39,31 @@
       <div class="wrapper">
         <article class="project-detail">
   <header>
-    <h1>TPS5431 Step‑Down DC‑DC Board</h1>
-    <p class="date">Aug 15, 2025</p>
+    <h1>TPS5431 DC‑DC Evaluation Board</h1>
+    <p class="date">Aug 10, 2025</p>
   </header>
 
   
-    <img src="/assets/images/tps5431-thumb.png" alt="TPS5431 Step‑Down DC‑DC Board" class="project-hero"/>
+    <img src="/assets/images/tps5431-thumb.png" alt="TPS5431 DC‑DC Evaluation Board" class="project-hero"/>
   
 
   <div class="project-content">
-    <p>A compact step-down (buck) converter evaluation board built around the Texas Instruments TPS5431 controller. The layout and feature set are designed for quick bench testing, prototyping and integration into embedded power chains.</p>
+    <p>A compact evaluation board built around the TI TPS5431-series synchronous step-down controller. The board is intended for bench validation and integration into embedded systems requiring a robust, configurable buck stage.</p>
+
+<h1 id="schematic">Schematic</h1>
+<p>Reference schematic for the power stage, compensation network, sense resistor, and test point placement.
+<img src="/assets/images/tps5431-schematic.png" alt="TPS5431 DC-DC schematic" /></p>
 
 <p>Key features</p>
 <ul>
-  <li>Controller: TI TPS5431 step-down regulator footprint with recommended supporting components and test pads.</li>
-  <li>Wide input: PCB designed to tolerate a broad input range with input filtering and transient protection footprints.</li>
-  <li>Adjustable output: potentiometer footprint for quick VOUT adjustment and pads for remote sense / Kelvin connections.</li>
-  <li>Power stage: footprints for low-RDS(on) MOSFETs, low‑ESR output capacitors, and a compact power inductor (shown on the board image).</li>
-  <li>Testability: labeled test points for VIN, VOUT, SW/LX node, EN, and ground to simplify bench characterization and scope probing.</li>
-  <li>Protection: footprints for input fuse and TVS diode, plus thermal reliefs for improved dissipation.</li>
+  <li>Controller: TPS5431-family synchronous buck controller for efficient step-down conversion.</li>
+  <li>Input range: wide VIN support with input filtering and transient protection.</li>
+  <li>Adjustable output: potentiometer footprint and pads for fixed resistor divider to set output.</li>
+  <li>Power stage: MOSFET footprints, low‑ESR output capacitors, and dedicated switch-node test point for scope probing.</li>
+  <li>Current sensing: optional sense resistor footprint and differential test points for load characterization.</li>
+  <li>Testability: labeled TP points for VIN, VOUT, SW, EN, and ground.</li>
+  <li>Protection: footprints for input fuse and TVS protection.</li>
+  <li>Connectivity: headers and pads for VIN/VOUT, enable control, and optional telemetry.</li>
 </ul>
 
 <p>Electrical / mechanical notes</p>
@@ -81,11 +87,6 @@
   <li>Integration testbed for downstream power electronics and control circuits</li>
 </ul>
 
-<p>Repository / more</p>
-<ul>
-  <li>Design files, BOM, and detailed test procedures: https://github.com/your/repo (replace with actual repo)</li>
-</ul>
-
   </div>
 
   <p><a href="/">&larr; Back</a></p>
@@ -101,14 +102,14 @@
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
-          <li class="p-name">Hector Jimenez</li><li><a class="u-email" href="mailto:hectorjimenezuc@gmail.com">hectorjimenezuc@gmail.com</a></li></ul>
+          <li class="p-name"></li><li><a class="u-email" href="mailto:hectorjimenezuc@gmail.com">hectorjimenezuc@gmail.com</a></li></ul>
       </div>
 
       <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/xmyoot"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">xmyoot</span></a></li></ul>
 </div>
 
       <div class="footer-col footer-col-3">
-        <p>I’m an Electrical Engineer specializing in hardware design and embedded systems.</p>
+        <p>Controls Testing Engineer at ABB Inc. Interested in hardware design, open source hardware and embedded systems. UCR 2024</p>
       </div>
     </div>
 

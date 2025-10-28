@@ -8,6 +8,11 @@ excerpt: "Compact custom development board using an ESP32‑WROOM module with US
 
 A compact development board built around an ESP32‑WROOM module. The design shown includes a USB power/input selection, an on‑board 3.3V regulator, USB‑to‑serial interface, user and power LEDs, reset and boot buttons, and plated pin headers for easy prototyping and connection to external circuitry.
 
+# Schematic
+A schematic showing usb power input, usb-to-serial interface, led indicators, reset/boot up buttons, and headers for rapid prototyping
+
+![ESP32 Dev Board schematic](/assets/images/esp32-sch.png)
+
 Key features
 - ESP32‑WROOM module footprint for easy module population (Wi‑Fi / Bluetooth enabled MCU).
 - Power input selection with a 5V → 3.3V regulator to power the ESP32 from USB or an external supply.
@@ -32,6 +37,3 @@ Use cases
 - Rapid firmware development for IoT prototypes and connected sensors
 - Teaching and demo platform for wireless microcontroller features
 - Integration platform for sensor nodes, actuators and peripheral driver development
-
-Repository / more
-- Schematic and board files: replace with your design repo link (e.g., https://github.com/your/repo)

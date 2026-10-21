@@ -8,7 +8,7 @@ excerpt: "A 50 × 35 mm guarded pH analog front end with a 16-bit ADC, precision
 
 A compact pH acquisition daughterboard designed around the **LMP91200**, **ADS112C04** and **REF3220**, with an external ESP32-S3 handling data logging and calibration. The project explores the practical requirements of measuring a high-impedance electrode: driven guards, clean surfaces, controlled reference startup and a traceable validation plan.
 
-**Status:** Rev A engineering prototype. Schematic, routed PCB, manufacturing outputs and firmware source are complete. The board has **not been fabricated, assembled or bench tested**. Images are CAD renders, not hardware photographs; the BNC body is an approximate clearance envelope.
+**Status:** Rev A engineering prototype. Schematic, routed PCB, manufacturing outputs and firmware source are complete. The board has **not been fabricated, assembled or bench tested**. Images are CAD renders, not hardware photographs; the BNC connector visualization follows its manufacturer drawing for major dimensions, with illustrative thread/socket details.
 
 [View project repository](https://github.com/xmyoot/guarded-ph-acquisition-module) · [Schematic PDF](https://github.com/xmyoot/guarded-ph-acquisition-module/blob/main/output/review/schematic.pdf) · [Engineering review](https://github.com/xmyoot/guarded-ph-acquisition-module/blob/main/docs/implementation/design_review.md)
 
@@ -28,11 +28,11 @@ The starting brief described an analog-chain replacement in a larger soil instru
 
 ![Top copper and drill rendering from exported Gerbers](/assets/images/soil-ph-afe-copper.png)
 
-*Independent rendering of the exported top copper, silkscreen, outline and drills. This illustrates the guard region and deliberate ground exclusion around the electrode input.*
+*Independent rendering of the exported top copper, outline and drills. This illustrates the guard region and deliberate ground exclusion around the electrode input.*
 
 KiCad 10.0.7 reports **zero enabled ERC errors/warnings, zero DRC violations, zero unconnected pads and zero schematic-parity errors**. An additional audit checks every native pad net, preserves the guarded input geometry, excludes foreign filled copper beneath the input and confirms that no vias overlap component paste apertures.
 
-Review caught two via/paste overlaps, which were corrected before the final exports. It also exposed stale analyzer-cache results; the final review uses fresh analysis files and native KiCad checks. Generic EMC warnings, intentional guard-mask openings and connector overhang are documented rather than treated as unexplained failures or silently dismissed.
+Review caught two via/paste overlaps, which were corrected before the final exports. A subsequent visual review removed staircase micro-jogs: routed segments fell from **352 to 257**, shortening copper by **8.203 mm** while preserving the locked guarded input and reference routing. The BNC preview was rebuilt with visible threaded barrel, bayonet lugs and socket geometry. The tooling review also exposed stale analyzer-cache results; the final review uses fresh analysis files and native KiCad checks. Generic EMC warnings, intentional guard-mask openings and connector overhang are documented rather than treated as unexplained failures or silently dismissed.
 
 ## Deliverables and next tests
 

@@ -4,7 +4,8 @@ title: Projects
 permalink: /projects/
 ---
 <ul>
-{% for project in site.projects | sort: 'date' | reverse %}
+{% assign sorted_projects = site.projects | sort: 'date' | reverse %}
+{% for project in sorted_projects %}
   <li><a href="{{ project.url | relative_url }}">{{ project.title }}</a> — {{ project.excerpt }}</li>
 {% endfor %}
 </ul>

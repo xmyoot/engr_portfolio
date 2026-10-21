@@ -30,6 +30,7 @@ github_username:  xmyoot
 
 # Build settings
 theme: minima
+future: true
 plugins:
   - jekyll-feed
 

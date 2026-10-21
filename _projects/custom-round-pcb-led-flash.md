@@ -1,6 +1,6 @@
 ---
 title: "Round LED Flash — Annular Camera Ring Strobe"
-date: 2026-10-21
+date: 2026-10-21 08:00:00 -0700
 tags: [hardware, power, boost, supercapacitor, led-driver, esp32, kicad]
 thumbnail: /assets/images/round-led-flash-thumb.png
 excerpt: "An 84 mm circular annular LED camera strobe with 4.8 V / 2.5 F balanced supercapacitor storage, 21 V synchronous boost, dual 200 mA current sinks, hardware timing interlocks, and ESP32-C3 BLE."

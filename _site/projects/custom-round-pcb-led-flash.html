@@ -56,7 +56,13 @@
 
 <hr />
 
-<h2 id="board--mechanical-overview">Board &amp; Mechanical Overview</h2>
+<h2 id="board--3d-assembly-overview">Board &amp; 3D Assembly Overview</h2>
+
+<p align="center">
+  <img src="/assets/images/round-led-flash-3d.png" alt="Round LED Flash 3D Isometric Raytraced Render" width="100%" />
+</p>
+
+<p><em>KiCad 10 3D raytraced assembly render showing Eaton 5.0 F supercapacitor cans, dual TO-263 CAT4101 linear sinks, MP3435 boost converter, USB-C input, and outer-edge ESP32-C3 RF keepout.</em></p>
 
 <p align="center">
   <img src="/assets/images/round-led-flash-layout.png" alt="Round LED Flash Annular Ring Layout" width="100%" />
@@ -213,6 +219,57 @@ PASS fortyfiveC_always_hot_inhibited                  (High-temperature charge l
 </code></pre></div></div>
 
 <p>Native KiCad electrical rule checks report <strong>zero ERC errors and zero warnings</strong>. Netlist parity between schematic symbols and placed footprints passes with <strong>zero mismatches across all 237 physical components</strong>.</p>
+
+<hr />
+
+<h2 id="component-density--rev-b-production-roadmap">Component Density &amp; Rev B Production Roadmap</h2>
+
+<p>At <strong>237 SMD/THT components</strong>, the Rev A design intentionally emphasizes <strong>fail-safe hardware safety</strong> over integration density. Over 45% of the total component count (108 parts) resides in the hardware interlock tree—employing 11 discrete 74LVC single-gate AND ICs, 4 precision comparators, 2 hardware supervisors, and 2 monostable one-shots to ensure zero software dependency for flash timing and over-temperature shutdown.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Functional Subsystem</th>
+      <th style="text-align: center">Rev A Discrete Count</th>
+      <th style="text-align: left">Primary Parts</th>
+      <th style="text-align: left">Rev B Production Target</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Hardware Interlocks &amp; Timing</strong></td>
+      <td style="text-align: center">108 parts</td>
+      <td style="text-align: left">11× 74LVC1G08, 4× TLV3011, 2× LTC6993, 8× BJTs</td>
+      <td style="text-align: left"><strong>1× Renesas GreenPAK SLG46826</strong> (~25 parts total)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Current Regulation Sinks</strong></td>
+      <td style="text-align: center">12 parts</td>
+      <td style="text-align: left">2× onsemi CAT4101 (TO-263 packages)</td>
+      <td style="text-align: left"><strong>Dual switch-mode LED driver</strong> (e.g. TI TPS92515)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Power Management &amp; Charging</strong></td>
+      <td style="text-align: center">46 parts</td>
+      <td style="text-align: left">TP4056, DW01A, TPS63070, TLV76033, TUSB320</td>
+      <td style="text-align: left"><strong>Integrated USB-C PMIC</strong> (e.g. TI BQ25895)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Boost Powertrain &amp; Energy Storage</strong></td>
+      <td style="text-align: center">44 parts</td>
+      <td style="text-align: left">MP3435, 2× Eaton HV1020 5.0 F caps, MLCC bank</td>
+      <td style="text-align: left">Retained (high-density MLCC array)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>MCU &amp; BLE Core</strong></td>
+      <td style="text-align: center">24 parts</td>
+      <td style="text-align: left">ESP32-C3-WROOM-02-N4 + strapping/buttons</td>
+      <td style="text-align: left">Retained (ESP32-C3 SoC / module)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Rev B Engineering Outcome:</strong> Consolidating the discrete logic into a single 2 × 3 mm configurable mixed-signal array (GreenPAK) and transitioning from linear current sinks to switch-mode LED drivers reduces total component count from <strong>237 to under 110 components</strong> (&gt;50% BOM reduction), eliminates massive TO-263 thermal dissipation on the annular ring, and dramatically lowers pick-and-place assembly cost for volume manufacturing.</p>
 
 <hr />
 

@@ -14,7 +14,13 @@ An advanced, hardware-interlocked **annular ring LED camera flash and video ligh
 
 ---
 
-## Board & Mechanical Overview
+## Board & 3D Assembly Overview
+
+<p align="center">
+  <img src="/assets/images/round-led-flash-3d.png" alt="Round LED Flash 3D Isometric Raytraced Render" width="100%" />
+</p>
+
+*KiCad 10 3D raytraced assembly render showing Eaton 5.0 F supercapacitor cans, dual TO-263 CAT4101 linear sinks, MP3435 boost converter, USB-C input, and outer-edge ESP32-C3 RF keepout.*
 
 <p align="center">
   <img src="/assets/images/round-led-flash-layout.png" alt="Round LED Flash Annular Ring Layout" width="100%" />
@@ -97,6 +103,22 @@ PASS fortyfiveC_always_hot_inhibited                  (High-temperature charge l
 ```
 
 Native KiCad electrical rule checks report **zero ERC errors and zero warnings**. Netlist parity between schematic symbols and placed footprints passes with **zero mismatches across all 237 physical components**.
+
+---
+
+## Component Density & Rev B Production Roadmap
+
+At **237 SMD/THT components**, the Rev A design intentionally emphasizes **fail-safe hardware safety** over integration density. Over 45% of the total component count (108 parts) resides in the hardware interlock tree—employing 11 discrete 74LVC single-gate AND ICs, 4 precision comparators, 2 hardware supervisors, and 2 monostable one-shots to ensure zero software dependency for flash timing and over-temperature shutdown.
+
+| Functional Subsystem | Rev A Discrete Count | Primary Parts | Rev B Production Target |
+| :--- | :---: | :--- | :--- |
+| **Hardware Interlocks & Timing** | 108 parts | 11× 74LVC1G08, 4× TLV3011, 2× LTC6993, 8× BJTs | **1× Renesas GreenPAK SLG46826** (~25 parts total) |
+| **Current Regulation Sinks** | 12 parts | 2× onsemi CAT4101 (TO-263 packages) | **Dual switch-mode LED driver** (e.g. TI TPS92515) |
+| **Power Management & Charging** | 46 parts | TP4056, DW01A, TPS63070, TLV76033, TUSB320 | **Integrated USB-C PMIC** (e.g. TI BQ25895) |
+| **Boost Powertrain & Energy Storage** | 44 parts | MP3435, 2× Eaton HV1020 5.0 F caps, MLCC bank | Retained (high-density MLCC array) |
+| **MCU & BLE Core** | 24 parts | ESP32-C3-WROOM-02-N4 + strapping/buttons | Retained (ESP32-C3 SoC / module) |
+
+**Rev B Engineering Outcome:** Consolidating the discrete logic into a single 2 × 3 mm configurable mixed-signal array (GreenPAK) and transitioning from linear current sinks to switch-mode LED drivers reduces total component count from **237 to under 110 components** (>50% BOM reduction), eliminates massive TO-263 thermal dissipation on the annular ring, and dramatically lowers pick-and-place assembly cost for volume manufacturing.
 
 ---
 

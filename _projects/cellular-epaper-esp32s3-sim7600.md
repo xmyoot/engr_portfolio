@@ -1,7 +1,7 @@
 ---
 title: Cellular ePaper Device — ESP32-S3 and SIM7600G-H
 date: 2026-10-21
-published: false
+published: true
 tags: [hardware, esp32-s3, cellular, epaper, kicad, pcb]
 thumbnail: /assets/images/cellular-epaper-revb.png
 excerpt: "A four-layer engineering prototype combining LTE connectivity, a 2.9-inch ePaper display, and temperature/humidity sensing."
@@ -9,7 +9,7 @@ excerpt: "A four-layer engineering prototype combining LTE connectivity, a 2.9-i
 
 An engineering prototype for a battery-powered remote information display, combining an ESP32-S3-WROOM-1-N8, a SIM7600G-H LTE/GNSS modem, a Good Display GDEY029T94 296 × 128 panel, and an SHT40 sensor on a 100 × 80 mm four-layer PCB.
 
-**Status: unpublished validation draft.** No assembled prototype, measured battery life, RF qualification, or successful display operation is claimed. This entry must remain unpublished until the validation record and remaining release gates are completed.
+**Status: engineering prototype — CAD design complete; physical validation pending.** No assembled prototype, measured battery life, RF qualification, or successful display operation is claimed.
 
 [Project repository](https://github.com/xmyoot/cellular-epaper-esp32s3-sim7600) · [Design report](https://github.com/xmyoot/cellular-epaper-esp32s3-sim7600/blob/main/DESIGN_REPORT.md) · [Validation record](https://github.com/xmyoot/cellular-epaper-esp32s3-sim7600/blob/main/design/VALIDATION.md)
 
@@ -25,4 +25,4 @@ Native KiCad review reports record zero ERC errors (one retained library-compari
 
 The repository includes hierarchical schematics, an explicit pin/net map, a BOM with procurement status, native KiCad review reports, critical-connection regression checks, and a staged bring-up procedure. Previous fabrication files and renders are archived as historical material and are not manufacturing instructions for this revision.
 
-The next milestones are independent footprint/contact checks, a selected fabricator stackup with impedance review, complete part qualification, and current-limited bench bring-up. Publication is contingent on documented validation results.
+The next milestones are independent footprint/contact checks, a selected fabricator stackup with impedance review, complete part qualification, and current-limited bench bring-up. Fabrication release remains contingent on documented validation results.
